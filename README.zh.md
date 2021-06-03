@@ -51,7 +51,7 @@ java -jar build/libs/gen-logo.jar -b boot.bmp -d damaged.bmp -f fastboot.bmp -u 
 
 ### 没有 Java 环境
 
-[Release](./releases) 页面提供本地编译的 Windows 版本可执行文件。
+[Release](https://github.com/Gardelll/xiaomi-logo-img-generator/releases) 页面提供本地编译的 Windows 版本可执行文件。
 
 ## 其他
 

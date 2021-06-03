@@ -1,5 +1,7 @@
 # Xiaomi Devices "logo.img" Generator
 
+[中文版本](README.zh.md)
+
 ## logo.img Format Description (For Redmi K20/Xiaomi MI 9T, other devices maybe difference)
 
 The beginning of the file is all 0x00, starting from the 0x4000 byte, it is the following content: (For the convenience of explanation, four bytes each wrap)
@@ -16,7 +18,7 @@ ef 05 00 00 // The size of the 2nd image in bytes
 ef 05 00 00 // The size of the 4th image in bytes
 ```
 
-The digital storage method in this file is special:
+The number storage method in this file is special:
 
 When storing, the number is shifted to the right by 24 bits, the overflowed part is rounded up, and then converted to little endian and stored as 32 bits.
 
@@ -51,7 +53,7 @@ java -jar build/libs/gen-logo.jar -b boot.bmp -d damaged.bmp -f fastboot.bmp -u 
 
 ### No Java Environment
 
-The [Release](./releases) page provides locally compiled Windows version executable files.
+Please visit [Release](https://github.com/Gardelll/xiaomi-logo-img-generator/releases) for natively compiled Windows version executable files.
 
 ## Others
 

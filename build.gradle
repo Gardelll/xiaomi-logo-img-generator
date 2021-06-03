@@ -1,0 +1,45 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'java'
+}
+
+group 'top.gardel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'commons-cli:commons-cli:1.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+def mainClassName = 'top.gardel.genlogo.App'
+
+build {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+}
+
+jar {
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
+
+    manifest.attributes.put('Main-Class', mainClassName)
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+}
+
+shadowJar {
+    archiveBaseName.set('gen-logo')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+}
